@@ -1,107 +1,168 @@
 # CareerPilot
 
+A full-stack job application tracking platform built with **React**, **Spring Boot**, and **REST APIs** to help organize applications, interview progress, notes, and job-search analytics.
+
 **Built by Merra Migora**
 
-CareerPilot is a full-stack job application tracking project. I started this idea because applying to jobs can get messy really fast, especially when everything is spread across emails, spreadsheets, notes, and calendar reminders. The goal of this project is to keep applications, interview progress, and job-search notes in one organized dashboard.
+---
 
-This project is also meant to show the kind of skills I have been building as a Computer Science student: React, Java, Spring Boot, REST APIs, database design, and clean project organization.
+## Overview
+
+CareerPilot was created to solve a common problem during the job search process: keeping track of dozens of applications, interview stages, notes, and follow-up tasks.
+
+Instead of managing everything through spreadsheets, emails, and sticky notes, CareerPilot provides a centralized dashboard where users can organize their job search and monitor their progress through an intuitive interface.
+
+This project demonstrates full-stack software engineering concepts including frontend development, REST API design, database integration, responsive UI design, and clean project organization.
 
 ---
 
-## What the app does
+# Screenshots
 
-CareerPilot lets a user:
+## Dashboard
 
-- Add a job application
-- Track the company, role, location, date applied, and notes
-- Update the application status
-- Delete an application
-- View dashboard statistics
-- See charts for application progress
+![Dashboard](docs/screenshots/dashboard.png)
 
-The frontend currently runs with sample data so the dashboard is easy to demo. The backend is included as a Spring Boot REST API and is ready to connect to the frontend as the next development step.
+The dashboard provides an overview of the current job search with application statistics, interview progress, status visualization, and quick actions.
 
 ---
 
-## Tech Stack
+## Application Management
 
-### Frontend
+![Application Management](docs/screenshots/application-management.png)
+
+Users can create new applications, update their status throughout the hiring process, add personal notes, and manage all applications from one place.
+
+---
+
+## Analytics
+
+![Analytics](docs/screenshots/analytics.png)
+
+Interactive charts summarize application progress and provide a quick visual overview of the current hiring pipeline.
+
+---
+
+# Features
+
+- Track job applications in one place
+- Add new applications
+- Update application status throughout the hiring process
+- Store interview notes
+- Monitor application statistics
+- Visualize progress using charts
+- Delete applications
+- Responsive dashboard layout
+- REST API backend
+- Database-ready architecture
+
+---
+
+# Technology Stack
+
+## Frontend
+
 - React
 - Vite
-- JavaScript
-- CSS
+- JavaScript (ES6)
+- CSS3
 - Chart.js
+- React Chart.js 2
 
-### Backend
+## Backend
+
 - Java
 - Spring Boot
 - Spring Data JPA
 - REST API
-- H2 database for local testing
-- PostgreSQL-ready structure
+- H2 Database
+- PostgreSQL-ready configuration
 
-### Tools
+## Development Tools
+
 - Git
 - GitHub
 - Maven
 - npm
+- IntelliJ IDEA
+- VS Code
 
 ---
 
-## Project Structure
+# Architecture
 
-```txt
-CareerPilot/
-├── frontend/
-│   ├── src/
+```
+                React Frontend
+                      │
+          HTTP Requests (REST API)
+                      │
+             Spring Boot Backend
+                      │
+             Spring Data JPA
+                      │
+          H2 Database / PostgreSQL
+```
+
+The frontend currently uses realistic sample data for demonstration purposes while the backend provides REST endpoints that are ready to be connected as the next development step.
+
+---
+
+# Project Structure
+
+```
+CareerPilot
+│
+├── frontend
+│   ├── src
+│   ├── public
 │   ├── package.json
-│   └── index.html
+│   └── vite.config.js
 │
-├── backend/
-│   ├── src/main/java/com/merra/careerpilot/
-│   ├── src/main/resources/application.properties
-│   └── pom.xml
+├── backend
+│   ├── src/main/java
+│   ├── src/main/resources
+│   ├── pom.xml
+│   └── mvnw
 │
-├── database/
+├── database
 │   └── schema.sql
+│
+├── docs
+│   └── screenshots
 │
 └── README.md
 ```
 
 ---
 
-## Frontend Features
+# API Endpoints
 
-- Clean dashboard UI
-- Add application form
-- Status dropdowns
-- Delete button
-- Application cards
-- Status summary cards
-- Doughnut chart
-- Bar chart
-- Responsive layout
+The Spring Boot backend exposes REST endpoints for managing job applications.
 
----
-
-## Backend API
-
-The Spring Boot backend includes these endpoints:
-
-```txt
-GET    /api/applications
-POST   /api/applications
-PUT    /api/applications/{id}
-DELETE /api/applications/{id}
-```
-
-The main model is `JobApplication`, which stores company, role, location, status, date applied, and notes.
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/applications` | Retrieve all applications |
+| POST | `/api/applications` | Create a new application |
+| PUT | `/api/applications/{id}` | Update an existing application |
+| DELETE | `/api/applications/{id}` | Delete an application |
 
 ---
 
-## How to Run the Frontend
+# Demo Data
 
-From the project root:
+The frontend ships with realistic sample applications from companies including:
+
+- Microsoft
+- Amazon
+- Nordstrom
+- Costco IT
+
+This allows the dashboard to demonstrate statistics and analytics immediately after launching the application.
+
+---
+
+# Running the Project
+
+## Frontend
 
 ```bash
 cd frontend
@@ -109,51 +170,75 @@ npm install
 npm run dev
 ```
 
-Then open the local Vite link in the browser.
+Open the Vite development server in your browser.
 
 ---
 
-## How to Run the Backend
-
-From the project root:
+## Backend
 
 ```bash
 cd backend
 ./mvnw spring-boot:run
 ```
 
-If Maven wrapper is not available, use:
+or
 
 ```bash
 mvn spring-boot:run
 ```
 
-The backend runs locally on:
+The backend runs locally at:
 
-```txt
+```
 http://localhost:8080
 ```
 
 ---
 
-## Why I Built This
+# Future Enhancements
 
-I wanted this project to feel useful, not just like a class assignment. A lot of students track applications manually, and it becomes hard to remember where they applied, what resume they used, and what the next step is. CareerPilot is my way of turning that real problem into a full-stack software project.
-
----
-
-## Future Improvements
-
-- Connect frontend forms directly to the backend API
-- Add user login and authentication
-- Add PostgreSQL for production
-- Add resume upload support
-- Add interview reminder dates
-- Add filtering and search
-- Deploy frontend and backend online
+- User authentication
+- Resume management
+- Cover letter storage
+- Interview scheduling
+- Calendar integration
+- Email reminders
+- Search and filtering
+- Advanced analytics
+- Cloud deployment
+- PostgreSQL production database
 
 ---
 
-## Resume Bullet
+# What I Learned
 
-Built CareerPilot, a full-stack job application tracking platform using React, Java Spring Boot, and database-backed REST APIs to manage applications, statuses, notes, and job-search analytics.
+Building CareerPilot helped strengthen my understanding of full-stack software development by combining frontend development with backend APIs and database design.
+
+Some of the concepts reinforced during this project include:
+
+- Component-based React development
+- REST API architecture
+- Spring Boot application structure
+- Database modeling
+- Responsive interface design
+- State management
+- Chart visualization
+- Git version control
+- Organizing a scalable project structure
+
+---
+
+# Resume Bullet
+
+> Developed a full-stack job application tracking platform using React, Spring Boot, REST APIs, and SQL, enabling users to organize applications, interview progress, notes, and analytics through a responsive dashboard.
+
+---
+
+## Author
+
+**Merra Migora**
+
+Computer Science Student  
+University of Washington Tacoma
+
+GitHub: https://github.com/merramigora
