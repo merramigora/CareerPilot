@@ -26,11 +26,19 @@ The dashboard provides an overview of the current job search with application st
 
 ---
 
-## Application Management
+## New Application Form
 
-![Application Management](docs/screenshots/application-management.png)
+![New Application Form](docs/screenshots/application-form.png)
 
-Users can create new applications, update their status throughout the hiring process, add personal notes, and manage all applications from one place.
+The application form allows users to add new job applications by entering the company, role, location, application date, status, and personal notes.
+
+---
+
+## Applications List
+
+![Applications List](docs/screenshots/applications-list.png)
+
+The applications list displays every job application in one place, making it easy to review details, update hiring stages, manage interview progress, and remove applications when needed.
 
 ---
 
